@@ -1,0 +1,80 @@
+{
+ "camera": {
+  "position": [
+   -0.55,
+   1.5,
+   1.5
+  ],
+  "target": [
+   -0.3,
+   1.93,
+   -0.0
+  ],
+  "fov_vertical_deg": 40.0,
+  "designed_aspect": "16:10"
+ },
+ "atlas": {
+  "flipY": false,
+  "size": 4096,
+  "colorSpace": "srgb",
+  "files": {
+   "off": "hero_off.webp",
+   "on": "hero_on.webp"
+  }
+ },
+ "shadeCentre": [
+  0.0,
+  1.95,
+  -0.0
+ ],
+ "bulbCentre": [
+  0.0,
+  1.912,
+  -0.0
+ ],
+ "bulbRadius": 0.058,
+ "meshes": [
+  "room",
+  "ribs",
+  "rings",
+  "fittings",
+  "bulb"
+ ],
+ "roomExtent": {
+  "note": "baked surfaces only; outside this there is nothing to see",
+  "backWall": {
+   "z": -0.85,
+   "x": [
+    -3.3,
+    0.95
+   ],
+   "y": [
+    0.3,
+    2.4
+   ]
+  },
+  "sideWall": {
+   "x": 0.95,
+   "z": [
+    -0.85,
+    1.6
+   ],
+   "y": [
+    0.3,
+    2.4
+   ]
+  },
+  "ceiling": {
+   "y": 2.4,
+   "x": [
+    -3.3,
+    0.95
+   ],
+   "z": [
+    -0.85,
+    1.6
+   ]
+  }
+ },
+ "notes": "Units are metres, Y up (glTF). Every mesh has one UV set (TEXCOORD_0) into a single shared 4096 atlas. Draw all meshes unlit (MeshBasicMaterial or a shader that mixes the two atlases); the lighting, wood colour and wall colour are already in the textures. Load the atlases as sRGB with flipY = false (glTF UV convention) and no tone mapping. Full texel density covers the default 16:10 view; the far left, low and near parts of the room are baked at about 40% density for wider or taller viewports. There is no floor. The bulb is its own mesh: in the 'on' atlas it is bright, so a soft CSS/sprite glow at bulbCentre sits well on top. All materials are matte, so the bake is correct from any camera angle."
+}

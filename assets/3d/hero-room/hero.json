@@ -1,0 +1,127 @@
+{
+ "camera": {
+  "position": [
+   -0.44,
+   1.85,
+   5.01
+  ],
+  "target": [
+   -0.53,
+   2.9,
+   0.12
+  ],
+  "fov_vertical_deg": 44.0,
+  "designed_aspect": "16:10"
+ },
+ "atlas": {
+  "flipY": false,
+  "size": 4096,
+  "colorSpace": "srgb",
+  "files": {
+   "off": "hero_off.webp",
+   "on": "hero_on.webp"
+  }
+ },
+ "shadeCentre": [
+  -0.0,
+  2.4001,
+  2.5
+ ],
+ "bulbCentre": [
+  0.0,
+  2.4369,
+  2.5
+ ],
+ "bulbRadius": 0.0501,
+ "meshes": [
+  "room_shell",
+  "outside",
+  "furnishings",
+  "shade_ribs",
+  "shade_fittings",
+  "bulb"
+ ],
+ "roomExtent": {
+  "note": "extent of everything baked (glTF Y-up metres); outside it there is nothing",
+  "min": [
+   -7.07,
+   -1.34,
+   3.75
+  ],
+  "max": [
+   2.1,
+   4.3475,
+   -7.2506
+  ]
+ },
+ "pointer": {
+  "sideways_m": 0.2,
+  "vertical_m": 0.1,
+  "baked_for": {
+   "sideways_m": 0.25,
+   "vertical_m": 0.13,
+   "aspect_range": [
+    0.5,
+    2.1
+   ]
+  }
+ },
+ "post": {
+  "off": {
+   "bloom": 0.03,
+   "bloom_thr": 1.5,
+   "vignette": 0.12,
+   "grain": 0.012,
+   "sat": 0.97,
+   "grad": [
+    -0.4,
+    0.1,
+    0.3
+   ],
+   "baked_into_atlas": [
+    "exposure",
+    "look",
+    "grad",
+    "sat"
+   ],
+   "not_baked": [
+    "vignette",
+    "bloom",
+    "grain"
+   ],
+   "view_exposure": 0.15
+  },
+  "on": {
+   "bloom": 0.2,
+   "bloom_thr": 3.0,
+   "vignette": 0.15,
+   "grain": 0.014,
+   "sat": 1.0,
+   "grad": [
+    -0.5,
+    0.9,
+    0.4
+   ],
+   "vignette_centre": [
+    0.5,
+    0.45
+   ],
+   "highlight_warmth": 0.5,
+   "baked_into_atlas": [
+    "exposure",
+    "look",
+    "white_balance",
+    "grad",
+    "sat",
+    "highlight_warmth"
+   ],
+   "not_baked": [
+    "vignette",
+    "bloom",
+    "grain"
+   ],
+   "view_exposure": 1.2
+  }
+ },
+ "notes": "Units are metres, Y up (glTF). Meshes: room_shell (walls, ceiling, floor, mouldings, plaster rose, window frames, chimney piece), outside (the painted view behind the sash window: a card, treat it like any surface), furnishings (rug, armchair, table, plant, mantel props, print), shade_ribs, shade_fittings (lampholder, flex, black rose), bulb. Every mesh has one UV set (TEXCOORD_0) into the single shared 4096 atlas; there are no normals and no materials: draw all meshes unlit with the shader in hero.js that mixes hero_off.webp and hero_on.webp by a uniform; atlas colorSpace sRGB, flipY=false, no tone mapping (exposure, look, white balance, graduated gain and finishing are already in the pixels). No glazing is exported, so windows read clear; the gap where the second sash window (out of the usual frame) lets in only sky: use a pale blue clear colour (#D6E4F5 off, #2A3350 on). NOT baked, to approximate with CSS/canvas on top: vignette (post.*.vignette, centre post.*.vignette_centre as fractions from left/top: it darkens by that amount at the corners with an elliptical fall-off), bloom (post.on.bloom: a soft glow round hot highlights, i.e. the bulb at bulbCentre; use a radial sprite), grain. The page moves the camera with lookAt(target) by up to pointer.sideways_m / pointer.vertical_m; the bake covers a quarter more and aspect ratios 0.5 to 2.1 (wider and taller than 16:10 only at about half the texel density). Everything baked is matte-ish: specular highlights were baked from the surface normal, not the camera."
+}

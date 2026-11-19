@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Basket | Fettler Design</title>
+<meta name="description" content="Your Fettler basket.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#FAFAF8">
+<link rel="preload" href="assets/fonts/archivo-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/poppins-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/site.css">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+
+<script type="module" src="assets/js/site.js"></script>
+</head>
+<body data-page="basket" data-root="">
+<a class="skip" href="#main">Skip to content</a>
+<div class="notice"><p><span>Made to order by Mike in Newcastle</span><span>UK delivery £20</span><span>Tynemouth Market every Sat + Sun</span></p></div>
+<header class="hdr">
+  <div class="wrap hdr-in">
+    <a class="logo" href="index.html" aria-label="Fettler Design, home"><img src="assets/img/logo-ink.png" width="311" height="234" alt=""></a>
+    <nav class="nav" id="nav" aria-label="Main"><ul><li><a href="shop.html">Shop</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="faq.html">FAQ</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
+    <a class="bag" href="basket.html" data-bag aria-label="Basket, empty"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M5 8h14l-1.2 12H6.2L5 8Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8" fill="none" stroke="currentColor" stroke-width="1.6"/></svg><span class="bag-n" data-bag-n hidden>0</span></a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav"><span class="menu-lines" aria-hidden="true"></span><span class="sr">Menu</span></button>
+  </div>
+</header>
+<main id="main">
+<section class="wrap bask-h page-h"><h1>Your basket</h1></section>
+<section class="wrap bask" data-basket>
+  <div class="bask-lines" data-lines></div>
+  <aside class="bask-sum" data-summary hidden>
+    <h2>Summary</h2>
+    <dl><div><dt>Items</dt><dd data-items></dd></div><div><dt>UK delivery</dt><dd data-delivery></dd></div><div class="tot"><dt>Total</dt><dd data-total></dd></div></dl>
+    <p class="bask-note">Made to order: allow up to 10 working days. Prefer to collect from Heaton? Choose collection at checkout and delivery comes off.</p>
+    <a class="btn btn-primary btn-block" href="checkout.html">Checkout</a>
+    <p class="bask-small">Changed your mind? Tell Mike within 14 days of delivery, then send it back unused in its packaging within 14 days of that. You pay return postage unless it arrived faulty.</p>
+  </aside>
+  <div class="bask-empty" data-empty hidden><p class="lede">Nothing in here yet.</p><p class="btns"><a class="btn btn-primary" href="shop.html">Shop all shades</a><a class="btn btn-line" href="index.html#spaces">Shop by space</a></p></div>
+</section>
+</main>
+<footer class="ftr">
+  <div class="wrap ftr-in">
+    <div class="ftr-brand">
+      <img src="assets/img/logo-paper.png" width="311" height="234" alt="Fettler Design" loading="lazy">
+      <p>Every shade is designed and made by Mike in Heaton, Newcastle upon Tyne.</p>
+      <p><a href="mailto:mike@fettler.co.uk">mike@fettler.co.uk</a></p>
+    </div>
+    <nav aria-label="Shop"><h2>Shop</h2><ul>
+      <li><a href="shop.html">All shades</a></li>
+      <li><a href="shop.html?space=corridor">Corridor</a></li><li><a href="shop.html?space=low-ceiling">Low ceiling</a></li><li><a href="shop.html?space=high-ceiling">High ceiling</a></li><li><a href="shop.html?space=over-a-table">Over a table</a></li><li><a href="shop.html?space=all-rounder">All-rounder</a></li>
+      <li><a href="shop.html?show=fittings">Bulbs and fixings</a></li>
+      <li><a href="shop.html?show=more">Furniture and more</a></li>
+    </ul></nav>
+    <nav aria-label="Help"><h2>Help</h2><ul>
+      <li><a href="faq.html#delivery">Delivery and lead time</a></li>
+      <li><a href="faq.html#fixings">Fixings and bulbs</a></li>
+      <li><a href="faq.html#returns">Returns</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul></nav>
+    <nav aria-label="Fettler"><h2>Fettler</h2><ul>
+      <li><a href="about.html">About Mike</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html#trade">Trade and projects</a></li>
+      <li><a href="https://www.instagram.com/fettlerdesign/" rel="noopener">Instagram</a></li>
+      <li><a href="https://www.facebook.com/fettlerdesign/" rel="noopener">Facebook</a></li>
+    </ul></nav>
+  </div>
+  <div class="wrap ftr-base"><p>© Fettler Design</p><p class="proto">Design prototype by Adam Marchant. Not the live shop: no orders or messages are sent from here.</p></div>
+</footer>
+<div class="added" data-added hidden role="status" aria-live="polite"></div>
+</body>
+</html>
